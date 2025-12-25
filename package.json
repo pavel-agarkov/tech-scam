@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --out docs",
+    "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export --per-slide --format pdf"
+    "export": "slidev export"
   },
   "dependencies": {
     "@slidev/cli": "^52.11.1",
