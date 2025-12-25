@@ -1,0 +1,17 @@
+{
+  "name": "tech-scam",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --out public",
+    "dev": "slidev --open",
+    "export": "slidev export --per-slide --format pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.11.1",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-dracula": "^0.2.0",
+    "vue": "^3.5.26"
+  }
+}
