@@ -1,7 +1,9 @@
 ---
 theme: default
-background: ./images/cyberlit.png
+# colorSchema: light
+background: ./images/cyberlit-wide-lite.png
 title: Tech Scam
+titleTemplate: '%s - by Pavel Agarkov'
 info: |
   ## You don't need kubernetes and microservices to modernize your system
 class: text-center
