@@ -9,7 +9,7 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
-    background:url('images/cyberlit-wide-lite.png') center top / 100% auto no-repeat;
+    background:url('./images/cyberlit-wide-lite.png') center top / 100% auto no-repeat;
     font-family: 'Avenir Next', 'Nunito Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
   ">
   <div style="margin-top:auto; margin-bottom:auto;">
