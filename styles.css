@@ -1,0 +1,7 @@
+.light .slidev-layout img[src^="https://www.plantuml.com"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.note details summary {
+    cursor: pointer;
+  } 

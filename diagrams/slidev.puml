@@ -1,0 +1,64 @@
+```plantuml
+@startuml slidev
+!theme crt-amber
+title "Enterprise Architecture of This Presentation"
+left to right direction
+skinparam defaultTextAlignment center
+
+actor "Presenter\n(me)" as user
+
+frame "Browser" as browser {
+  artifact "Slidev Presentation\n(HTML + CSS + JS)" as presentation
+}
+
+rectangle "Local Machine" as local {
+  card "Slidev" as slidev {
+    artifact "Markdown Slides"
+    artifact "PlantUML Diagrams"
+    artifact "Images"
+    artifact "HTML Pages"
+    artifact "CSS Styles"
+    artifact "Configuration Files"
+  }
+}
+
+rectangle "GitHub" as gh {
+
+  folder "GitHub Repository" as repo {
+    artifact "source files\n(slides, diagrams, assets)"
+  }
+
+  card "GitHub Actions\n(CI/CD Pipeline)" as gha {
+    process "Build Slidev" as build
+    process "Generate static site" as generate
+    process "Deploy to Pages" as deploy
+  }
+
+  package "GitHub Pages\n(Static Hosting)" as pages {
+    artifact "Built Presentation\n(index.html + assets)"
+  }
+}
+
+user --> slidev : Edit slides\nPreview locally
+slidev --> repo : git push
+
+repo --> gha : Trigger workflow
+build --> generate
+generate --> deploy
+
+gha --> pages : Deploy static site
+
+user --> presentation : Open presentation\nin browser
+presentation --> pages : Load static website
+
+@enduml
+```
+
+<!--
+- **RU**  
+  Примером такого overengineeringa может служить данная презентация, созданная с помощью Slidev.
+  Такая презентация разрабатывается локально с использованием Markdown, HTML, CSS, PlantUML и других ресурсов,
+  затем исходные файлы хранятся в репозитории GitHub, где с помощью GitHub Actions автоматически собирается
+  статический сайт, который разворачивается на GitHub Pages для публичного доступа. Получается гораздо сложнее,
+  чем просто создать слайды в PowerPoint или Google Slides, но при этом не даёт никаких ощутимых преимуществ.
+-->

@@ -1,0 +1,85 @@
+---
+title: Microservices is a scam - DHH
+---
+<style>
+.light article {
+  filter: invert(1) hue-rotate(180deg);
+}
+</style>
+<div v-html="rawTweet"></div>
+
+<script setup>
+  const rawTweet = `
+<article style="
+    max-width: 550px;
+    margin: 0 auto;
+    background: rgb(21, 32, 43);
+    border: 1px solid rgb(47, 51, 54);
+    border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    color: rgb(231, 233, 234);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  ">
+  <header style="display:flex; align-items:flex-start; margin-bottom:2px;">
+    <div style="margin-right:12px;">
+      <img src="https://pbs.twimg.com/profile_images/1746980162607140864/fG9Fj4K__bigger.jpg"
+           alt="David Heinemeier Hansson avatar"
+           style="width:48px; height:48px; border-radius:50%; display:block;" />
+    </div>
+    <div style="flex:1; min-width:0;">
+      <div style="display:flex; align-items:center; flex-wrap:wrap;">
+        <span style="font-weight:700; margin-right:4px; font-size:15px;">
+          David Heinemeier Hansson
+        </span>
+        <span style="color:rgb(113, 118, 123); font-size:15px;">
+          @dhh
+        </span>
+      </div>
+      <div style="color:rgb(113, 118, 123); font-size:13px; margin-top:2px;">
+        Posted on Dec 10, 2025
+        &middot;
+        <a
+          href="https://x.com/dhh/status/1998785569468399819"
+          style="color:rgb(113, 118, 123); text-decoration:none;"
+          target="_blank"
+          rel="noopener noreferrer">
+          View on X
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div style="font-size:15px; line-height:1.5; white-space:pre-wrap;">
+Microservices is the software industry’s most successful confidence scam. It convinces small teams that they are “thinking big” while systematically destroying their ability to move at all. It flatters ambition by weaponizing insecurity: if you’re not running a constellation of services, are you even a real company? Never mind that this architecture was invented to cope with organizational dysfunction at planetary scale. Now it’s being prescribed to teams that still share a Slack channel and a lunch table.
+
+Small teams run on shared context. That is their superpower. Everyone can reason end-to-end. Everyone can change anything. Microservices vaporize that advantage on contact. They replace shared understanding with distributed ignorance. No one owns the whole anymore. Everyone owns a shard. The system becomes something that merely happens to the team, rather than something the team actively understands. This isn’t sophistication. It’s abdication. <a
+       href="https://x.com/dhh/status/1998785569468399819"
+       target="_blank" rel="noopener noreferrer"
+       style="color:rgb(29, 155, 240); text-decoration:none; font-size:15px;">Show more</a>
+  </div>
+  <footer style="margin-top:12px; color:rgb(113, 118, 123); font-size:13px;">
+    <span style="margin-right:16px;">
+      <strong style="font-weight:700; color:rgb(231, 233, 234);">8.3K</strong>
+      Likes
+    </span>
+    <span style="margin-right:16px;">
+      <strong style="font-weight:700; color:rgb(231, 233, 234);">1.5K</strong>
+      Reposts
+    </span>
+    <span>
+      <strong style="font-weight:700; color:rgb(231, 233, 234);">185</strong>
+      Replies
+    </span>
+  </footer>
+</article>
+`
+</script>
+
+<!--
+<details>
+  <summary>🇷🇺</summary>
+  Вот в этом твите DHH во всем винит микросервисы.
+  Он считает, что микросервисы - это "самая успешная афера в индустрии программного обеспечения"
+</details>
+-->

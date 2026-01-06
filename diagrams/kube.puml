@@ -1,0 +1,51 @@
+
+```plantuml
+@startuml kube
+title "Simple API in Azure Kubernetes Service (AKS)"
+left to right direction
+!theme crt-amber
+skinparam defaultTextAlignment center
+
+frame "Azure Cloud" as cloud {
+  component "Azure Front Door\n/ Azure Application Gateway" as afd
+  frame "Azure VNet" as vnet {
+    frame "AKS Cluster" as aks {
+      component "Ingress Controller\n(NGINX / AGIC)" as ingress
+      frame "Namespace: app" as ns {
+        component "Deployment: api" as deploy {
+          artifact "Pod 1\n(API Container)" as pod1
+          artifact "Pod 2\n(API Container)" as pod2
+        }
+        component "Service: api-svc\n(ClusterIP)" as svc
+      }
+      frame "Config & Secrets" as cfg {
+        artifact "ConfigMap"
+        artifact "Secret" as sec
+      }
+      frame "Service Mesh (optional)" as mesh {
+        artifact "Envoy Sidecar"
+      }
+    }
+    frame "Observability Stack" as obs {
+      artifact "Prometheus"
+      artifact "Grafana"
+      artifact "Log Analytics / Loki"
+    }
+    database "Azure SQL / PostgreSQL\n(Managed DB)" as db
+    artifact "Azure Container Registry\n(ACR)" as acr
+    artifact "Azure Key Vault\n(Secrets Management)" as kv
+  }
+}
+
+afd --> ingress
+ingress --> svc
+svc --> deploy
+deploy --> db
+
+deploy --> mesh
+deploy -up-> obs
+deploy -up-> acr
+deploy --> kv
+
+@enduml
+```
