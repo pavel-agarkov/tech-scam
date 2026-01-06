@@ -2,6 +2,10 @@
 ## (Promise #5)
 
 <!--
+<details open>
+  <summary>🇵🇱</summary>
+  Skalowanie horyzontalne
+</details>
 <details>
   <summary>🇷🇺</summary>
   Горизонтальное масштабирование
@@ -22,13 +26,29 @@
   - scheduler  
   - message consumer  
 - You don’t need Kubernetes to run 10 instances of your app
-
 <!--
+<details open>
+  <summary>🇵🇱</summary>
+
+  Monolit nie oznacza niedostępność skalowania  
+
+  Współczesne monolity mogą być lekkie i uruchamiane w kontenerach.  
+  Dzięki temu łatwo je skalować — wystarczy uruchomić więcej instancji  
+  albo podzielić je na różne role, takie jak API, worker czy message handler.  
+
+  Nie potrzebujesz do tego całego klastra Kubernetesa,  
+  żeby uruchomić dziesięć kopii aplikacji.
+</details>
+
 <details>
   <summary>🇷🇺</summary>
-  Современные монолиты могут быть легкими и запускаться в контейнерах,<br/>
-  тогда их легко масштабировать запуская больше копий или в разных ролях:<br/>
-  API, worker, message handler...<br/>
-  Так что вам не нужен целый класстер кубера, чтобы запустить 10 копий приложения...
+
+  Монолит не означает невозможность масштабирования  
+
+  Современные монолиты могут быть лёгкими и запускаться в контейнерах.  
+  Тогда их легко масштабировать, запуская больше копий  
+  или распределяя по разным ролям: API, worker, message handler.  
+
+  Так что вам не нужен целый кластер кубера, чтобы запустить десять копий приложения.
 </details>
 -->
