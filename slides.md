@@ -163,7 +163,7 @@ title: Why “Microservices” Debates Miss the Point - CodeOpinion
 ---
 layout: image
 # src: ./diagrams/slidev.puml
-image: /diagrams/slidev.svg
+image: /images/slidev.svg
 backgroundSize: contain
 ---
 
