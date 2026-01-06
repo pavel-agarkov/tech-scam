@@ -11,9 +11,7 @@ drawings:
   persist: false
 transition: fade-out
 mdc: true
-duration: 15min
-seoMeta:
-  ogImage: auto
+duration: 20min
 ---
 
 # Tech Scam
