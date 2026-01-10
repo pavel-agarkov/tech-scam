@@ -118,8 +118,10 @@ title: Why “Microservices” Debates Miss the Point - CodeOpinion
     Podobny problem, choć w innej formie, leży u podstaw kryptowalut.  
   </details>
 
-  Dziś jednak mówimy o mikroserwisach i o problemach, które naprawdę warto rozwiązać — nawet jeśli nie są modne.  
-  Nawet kiedy wiemy, jakie problemy są kluczowe, często wybieramy metod, który nam się podoba,  
+  Dziś jednak mówimy o mikroserwisach i o problemach,  
+  które naprawdę warto rozwiązać — nawet jeśli nie są modne.  
+  Nawet kiedy wiemy, jakie problemy są kluczowe,  
+  często wybieramy metod, który nam się podoba,  
   a nie ten, który jest optymalny.  
 </details>
 

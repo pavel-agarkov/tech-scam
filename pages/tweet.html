@@ -5,6 +5,9 @@ title: Microservices is a scam - DHH
 .light article {
   filter: invert(1) hue-rotate(180deg);
 }
+.light #avatar {
+  filter: invert(1) hue-rotate(180deg);
+}
 </style>
 <div v-html="rawTweet"></div>
 
@@ -23,7 +26,8 @@ title: Microservices is a scam - DHH
   ">
   <header style="display:flex; align-items:flex-start; margin-bottom:2px;">
     <div style="margin-right:12px;">
-      <img src="https://pbs.twimg.com/profile_images/1746980162607140864/fG9Fj4K__bigger.jpg"
+      <img id="avatar"
+           src="https://pbs.twimg.com/profile_images/1746980162607140864/fG9Fj4K__bigger.jpg"
            alt="David Heinemeier Hansson avatar"
            style="width:48px; height:48px; border-radius:50%; display:block;" />
     </div>

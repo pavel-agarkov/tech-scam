@@ -1,4 +1,6 @@
-.light .slidev-layout img[src^="https://www.plantuml.com"] {
+.light .slidev-layout img[src^="https://www.plantuml.com"],
+.light .slidev-layout[style*="background-image"]:not(.cover)
+ {
   filter: invert(1) hue-rotate(180deg);
 }
 
