@@ -6,7 +6,8 @@
 4. Built‑in reliability & resilience  
 5. Cost efficiency through optimal resource usage  
 6. Infrastructure as Code for everything  
-7. Unified platform for all workloads  
+7. Unified platform for all workloads
+
 <!--
 <details open>
   <summary>🇵🇱</summary>
@@ -28,7 +29,7 @@
 <details>
   <summary>🇷🇺</summary>
 
-  Ok, вы всё‑таки решились на микросервисы  
+  Ок, вы всё‑таки решились на микросервисы  
   и раздумываете, нужен ли вам кубер.  
   Что же люди ожидают от него «из коробки»?  
 
@@ -37,7 +38,7 @@
   - встроенная надёжность и отказоустойчивость  
   - выгодная стоимость за счёт оптимального использования ресурсов  
   - полное описание инфраструктуры в виде кода  
-  - поддержка разных типов приложений (API, Worker, Job)  
+  - поддержка разных типов приложений (API, Worker, Job)
 
   Но доступны ли все эти фишки только для Кубера?
 </details>
@@ -48,9 +49,9 @@
 # How to Achieve the Same (Without Kubernetes)
 
 1. **Zero‑downtime deployments**  
-   → App Service deployment slots (swap, traffic routing, sticky sessions)
+   → App Service blue‑green deployments with deployment slots
 
-2. **Automatic scaling**  
+2. **Automatic metric based scaling**  
    → App Service autoscale rules / Function App consumption plan
 
 3. **Independent deployments for teams**  
@@ -67,6 +68,7 @@
 
 7. **Unified platform**  
    → Azure App Platform (App Service + Functions + API Management)
+
 <!--
 <details open>
   <summary>🇵🇱</summary>
@@ -74,25 +76,33 @@
   Jak to wszystko zrealizować bez Kubernetesa?  
   Zamiast tego wykorzystajmy App Service, Function App i CDKTF.  
 
-  - aktualizacje bez przestojów  
-    → dzięki deployment slots w App Service  
-      można szybko i bezpiecznie przełączać się między slotami Preview i Production  
+  - **aktualizacje bez przestojów**  
+    → stosujemy **blue‑green na deployment slotach**:  
+      dla każdej wersji tworzymy nowy slot, uruchamiamy aplikację,  
+      **stopniowo przekierowujemy ruch**,  
+      a poprzedni slot wyłączamy dopiero po pewnym czasie.  
 
-  - automatyczne skalowanie na podstawie metryk  
+      **Dlaczego nie używamy slot swap?**  
+      Swap przełącza całe środowisko i powoduje restart aplikacji,  
+      co może przerwać aktualnie obsługiwane żądania —  
+      dlatego bezpieczniej jest tworzyć nowy slot, uruchamiać go  
+      i stopniowo przekierowywać ruch.  
+
+  - **automatyczne skalowanie na podstawie metryk**  
     → zarówno App Service, jak i Function App potrafią automatycznie  
       skalować się na podstawie metryk,  
       np. liczby żądań lub długości kolejki wiadomości  
 
-  - wbudowana niezawodność i odporność na awarie  
+  - **wbudowana niezawodność i odporność na awarie**  
     → App Service ma natywnie health checks, auto‑healing, retries  
       oraz możliwość redundancji regionalnej  
 
-  - korzystna cena dzięki optymalnemu wykorzystaniu zasobów  
+  - **korzystna cena dzięki optymalnemu wykorzystaniu zasobów**  
     → jeśli aplikacja ma stabilne obciążenie,  
       App Service będzie prawdopodobnie znacznie tańszy  
       niż np. Container Apps  
 
-  - pełny opis infrastruktury w kodzie  
+  - **pełny opis infrastruktury w kodzie**  
     → do IaC wcale nie trzeba używać YAML  
       My korzystamy z Terraform i CDKTF,  
       które w pełni wspierają Azure  
@@ -101,7 +111,7 @@
       zarówno względem statycznych definicji,  
       jak i języków, w których nie jesteśmy ekspertami  
 
-  - różne typy aplikacji (API, Worker, Job)  
+  - **różne typy aplikacji (API, Worker, Job)**  
     → App Service może działać nie tylko jako API, ale również jako worker,  
       np. do obsługi wiadomości z kolejki  
       Function App również to potrafi,  
@@ -115,8 +125,15 @@
   Вместо этого возьмём App Service, Function App и CDKTF.
 
   - обновления без остановки работы  
-    → при использовании deployment slots в App Service  
-      можно быстро и безопасно переключаться между Preview и Production  
+    → используем **blue‑green на deployment слотах**:  
+      для каждого релиза создаётся новый слот, приложение прогревается,  
+      **трафик постепенно переводится**,  
+      а предыдущий слот отключается только спустя время.  
+      **Почему не используем slot swap?**  
+      Swap переключает всё окружение и перезапускает приложение,  
+      что может оборвать выполняющиеся запросы —  
+      поэтому надёжнее создавать новый слот, прогревать его  
+      и постепенно переводить трафик.  
 
   - автоматическое масштабирование на основе метрик  
     → и App Service, и Function App могут автоматически  
