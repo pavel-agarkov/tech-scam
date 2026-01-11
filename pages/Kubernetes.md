@@ -1,4 +1,4 @@
-# Kubernetes: What We Expected
+# What Kubernetes are often expected to bring
 
 1. Easy zero‑downtime deployments  
 2. Automatic metric based scaling  
@@ -14,7 +14,7 @@
 
   Załóżmy, że jednak zdecydowaliście się na mikroserwisy  
   i zastanawiacie się, czy potrzebujecie Kubernetesa.  
-  Czego ludzie zwykle oczekują od niego „z pudełka”?  
+  Co zwykle jest oczekiwane od niego „z pudełka”?  
 
   - aktualizacji bez przestojów  
   - automatycznego skalowania na podstawie metryk  

@@ -30,7 +30,7 @@
   <summary>🇵🇱</summary>
 
   W praktyce wszystko trwa tylko dłużej.  
-  Jeśli zacząć budować monolit bez przygotowania,  
+  Jeśli zacząć dzielić monolit na mikroserwisy bez przygotowania,  
   logika biznesowa szybko rozleje się po wielu komponentach,  
   często rozwijanych przez różne zespoły.  
   W efekcie wdrażanie nowych funkcji zajmuje znacznie więcej czasu niż wcześniej.

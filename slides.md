@@ -85,6 +85,8 @@ title: Why “Microservices” Debates Miss the Point - CodeOpinion
 
 
 ---
+hide: true
+---
 
 # Hype as the Driver of Architecture
 
@@ -120,9 +122,12 @@ title: Why “Microservices” Debates Miss the Point - CodeOpinion
 
   Dziś jednak mówimy o mikroserwisach i o problemach,  
   które naprawdę warto rozwiązać — nawet jeśli nie są modne.  
-  Nawet kiedy wiemy, jakie problemy są kluczowe,  
-  często wybieramy metod, który nam się podoba,  
-  a nie ten, który jest optymalny.  
+
+  <details>
+    Nawet kiedy wiemy, jakie problemy są kluczowe,  
+    często wybieramy metod, który nam się podoba,  
+    a nie ten, który jest optymalny.  
+  </details>
 </details>
 
 <details style="font-size:12px">
@@ -155,10 +160,12 @@ title: Why “Microservices” Debates Miss the Point - CodeOpinion
 
   Но сегодня мы говорим о микросервисах и о проблемах,  
   которые действительно стоило бы решать, даже если вокруг них нет хайпа.  
-
-  И даже когда мы понимаем, какие проблемы важны,  
-  мы всё равно часто выбираем метод, который нам нравится,  
-  а не тот, который действительно оптимален.  
+  
+  <details>
+    И даже когда мы понимаем, какие проблемы важны,  
+    мы всё равно часто выбираем метод, который нам нравится,  
+    а не тот, который действительно оптимален.  
+  </details>
 </details>
 -->
 
@@ -167,6 +174,7 @@ layout: image
 # src: ./diagrams/slidev.puml
 image: /images/slidev.svg
 backgroundSize: contain
+hide: true
 ---
 
 <!--
