@@ -14,10 +14,11 @@
 
   Załóżmy, że jednak zdecydowaliście się na mikroserwisy  
   i zastanawiacie się, czy potrzebujecie Kubernetesa.  
-  Co zwykle jest oczekiwane od niego „z pudełka”?  
+  Co zwykle jest oczekiwane od niego „z pudełka”?
 
   - aktualizacji bez przestojów  
   - automatycznego skalowania na podstawie metryk  
+  - niezależnych wdrożeń dla niezależnych zespołów  
   - wbudowanej niezawodności i odporności na awarie  
   - oszczędności kosztów dzięki optymalnemu wykorzystaniu zasobów  
   - pełnego opisu infrastruktury w formie kodu  
@@ -35,6 +36,7 @@
 
   - обновления без остановки работы  
   - автоматическое масштабирование на основе метрик  
+  - независимые деплои для независимых команд  
   - встроенная надёжность и отказоустойчивость  
   - выгодная стоимость за счёт оптимального использования ресурсов  
   - полное описание инфраструктуры в виде кода  
@@ -55,7 +57,7 @@
    → App Service autoscale rules / Function App consumption plan
 
 3. **Independent deployments for teams**  
-   → Separate App Services / Function Apps per domain + isolated pipelines
+   → Separate App Service Plan + isolated pipelines
 
 4. **Reliability & resilience**  
    → Built‑in health checks, auto‑healing, retries, regional redundancy
@@ -93,6 +95,12 @@
       skalować się na podstawie metryk,  
       np. liczby żądań lub długości kolejki wiadomości  
 
+  - **niezależne wdrożenia dla zespołów**  
+    → każdy zespół dostaje **własny App Service Plan**  
+      oraz **oddzielny pipeline CI/CD**.  
+      Daje to nawet większą niezależność  
+      niż sam namespace w Kubernetes.  
+
   - **wbudowana niezawodność i odporność na awarie**  
     → App Service ma natywnie health checks, auto‑healing, retries  
       oraz możliwość redundancji regionalnej  
@@ -124,41 +132,48 @@
   Как можно всё это реализовать без Кубера?  
   Вместо этого возьмём App Service, Function App и CDKTF.
 
-  - обновления без остановки работы  
+  - **обновления без остановки работы**  
     → используем **blue‑green на deployment слотах**:  
       для каждого релиза создаётся новый слот, приложение прогревается,  
       **трафик постепенно переводится**,  
       а предыдущий слот отключается только спустя время.  
+
       **Почему не используем slot swap?**  
       Swap переключает всё окружение и перезапускает приложение,  
       что может оборвать выполняющиеся запросы —  
       поэтому надёжнее создавать новый слот, прогревать его  
       и постепенно переводить трафик.  
 
-  - автоматическое масштабирование на основе метрик  
+  - **автоматическое масштабирование на основе метрик**  
     → и App Service, и Function App могут автоматически  
       масштабироваться на основе метрик,  
       например количества запросов или длины очереди сообщений  
 
-  - встроенная надёжность и отказоустойчивость  
+  - **независимые деплои для команд**  
+    → каждая команда получает **свой App Service Plan**,  
+      и **полностью изолированный CI/CD‑pipeline**.  
+      Это даёт даже больше независимости  
+      чем namespace в Kubernetes.  
+
+  - **встроенная надёжность и отказоустойчивость**  
     → в App Service уже есть health checks, auto‑healing, retries  
       и региональная избыточность  
 
-  - выгодная стоимость за счёт оптимального использования ресурсов  
+  - **выгодная стоимость за счёт оптимального использования ресурсов**  
     → если приложение имеет стабильную нагрузку,  
       App Service, скорее всего, будет значительно дешевле,  
       чем, например, Container Apps  
 
-  - полное описание инфраструктуры в коде  
+  - **полное описание инфраструктуры в коде**  
     → для IaC необязательно использовать YAML  
-      Мы, например, используем Terraform и CDKTF,  
+      Мы используем Terraform и CDKTF,  
       которые полностью покрывают Azure  
-      CDKTF позволяет описывать инфраструктуру на любимом языке  
+      CDKTF позволяет описывать инфраструктуру на любимом языке —  
       в нашем случае на C#, что даёт огромные преимущества  
-      как по сравнению со статическими описаниями,  
-      так и с языками, в которых мы не специалисты  
+      по сравнению со статическими описаниями  
+      и языками, в которых мы не специалисты  
 
-  - различные типы приложений (API, Worker, Job)  
+  - **разные типы приложений (API, Worker, Job)**  
     → App Service может быть не только API, но и worker’ом,  
       например для обработки сообщений из очереди  
       Function App тоже это умеет,  
