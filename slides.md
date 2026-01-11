@@ -272,7 +272,7 @@ src: ./pages/Kubernetes.md
 
 # When Microservices Actually Make Sense
 
-- You have a **very large team** (100+ developers)
+- You have a **very large team**
 - Your product has **clear, independent domains**
 - You need **technology stack independence**
 - You require **isolated scalability** for specific components
