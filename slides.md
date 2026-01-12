@@ -272,7 +272,7 @@ src: ./pages/Kubernetes.md
 
 # When Microservices Actually Make Sense
 
-- You have a **very large team**
+- You have a **very large team** (or a few smaller)
 - Your product has **clear, independent domains**
 - You need **technology stack independence**
 - You require **isolated scalability** for specific components
@@ -283,7 +283,7 @@ src: ./pages/Kubernetes.md
 
   Kiedy mikroserwisy naprawdę mają sens?  
 
-  - gdy zespół jest bardzo duży  
+  - gdy zespół jest bardzo duży (albo kilka mniejszych)  
   - gdy w biznesie da się jasno wydzielić niezależne domeny  
   - gdy potrzebna jest niezależność technologiczna  
     (np. z powodów regulacyjnych lub geopolitycznych)  
