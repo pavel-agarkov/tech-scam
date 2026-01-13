@@ -219,28 +219,32 @@ hide: true
 <details open>
   <summary>🇵🇱</summary>
 
-  Spójrzmy, z czym najczęściej kojarzy się architektura mikroserwisowa —  
-  choć w praktyce są to raczej warunki wstępne,  
-  które trzeba spełnić, aby w ogóle móc ją wdrożyć.  
+  Co najczęściej kojarzy się z architekturą mikroserwisową?  
 
   - szybkie dostarczanie nowych funkcji  
   - szybkie i częste wdrażanie  
   - niezależność zespołów  
   - wysoka niezawodność i odporność na awarie  
   - skalowanie horyzontalne  
+
+  Sprawdźmy czy to faktyczne korzyści mikroserwisów,  
+  czy raczej wymagania, które musimy spełnić wcześniej. 
+
 </details>
 
 <details>
   <summary>🇷🇺</summary>
 
-  Давайте посмотрим, что обычно ассоциируется с микросервисами,  
-  хотя на деле это скорее предусловия для их внедрения.  
+  Что же обычно ассоциируется с микросервисами?  
 
   - быстрое внедрение новых фич  
   - быстрое развертывание  
   - независимость команд  
   - надёжность и отказоустойчивость  
   - горизонтальное масштабирование  
+
+  Но давайте проверим, что из этого дают микросервисы,  
+  а что мы должны обеспечить сами заранее.  
 </details>
 -->
 
