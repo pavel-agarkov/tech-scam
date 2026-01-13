@@ -215,6 +215,7 @@ hide: true
 - 🧩 Independent teams  
 - 🔄 Reliability and resilience  
 - 📈 Horizontal scalability  
+
 <!--
 <details open>
   <summary>🇵🇱</summary>
