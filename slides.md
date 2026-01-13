@@ -229,8 +229,12 @@ hide: true
   - skalowanie horyzontalne  
 
   Sprawdźmy czy to faktyczne korzyści mikroserwisów,  
-  czy raczej wymagania, które musimy spełnić wcześniej. 
+  czy raczej wymagania, które musimy spełnić wcześniej.  
 
+  <details>
+    Statystyka pokazuje, że im więcej wozów strażackich jedzie do pożaru, tym większe są straty.  
+    Wniosek: trzeba wysyłać mniej wozów.  
+  </details>
 </details>
 
 <details>
